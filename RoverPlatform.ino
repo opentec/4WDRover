@@ -19,13 +19,29 @@ void setup() {
 }
 
 void loop() {
-  forward();
-  delay(2000);
-  stop();
-  delay(2000);
+  //forward();
+  //delay(2000);
+  //stop();
+  //One second delay for motor to fully rest
+  //delay(1000);
+  //reverse();
+  //delay(2000);
+  //stop();
+  //One second delay for motor to fully rest
+  //delay(1000);
+  //leftTurn();
+  //delay(2000);
+  //stop();
+  //One second delay for motor to fully rest
+  //delay(1000);
+  //rightTurn();
+  //delay(2000);
+  //stop();
+  //One second delay for motor to fully rest
+  //delay(1000);
 }
 
-void forward() {
+void forward(){
   //run 1st motor
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
@@ -38,7 +54,7 @@ void forward() {
   analogWrite(enB, 200);
 }
 
-void reverse() {
+void reverse(){
   //run 1st motor
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
@@ -50,9 +66,36 @@ void reverse() {
   //speed to 2nd motor
   analogWrite(enB, 200);
 }
-void stop() {
+
+void stop(){
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
+}
+
+void leftTurn(){
+  //run 1st motor
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  //speed to 1st motor
+  analogWrite(enA, 200);
+  //run 2nd motor
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  //speed to 2nd motor
+  analogWrite(enB, 200);
+}
+
+void rightTurn(){
+  //run 1st motor
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  //speed to 1st motor
+  analogWrite(enA, 200);
+  //run 2nd motor
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+  //speed to 2nd motor
+  analogWrite(enB, 200);
 }
