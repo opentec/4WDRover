@@ -19,7 +19,23 @@ void setup() {
 }
 
 void loop() {
+  forward();
+  delay(2000);
+  stop();
+  delay(2000);
+}
 
+void forward() {
+  //run 1st motor
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  //speed to 1st motor
+  analogWrite(enA, 200);
+  //run 2nd motor
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+  //speed to 2nd motor
+  analogWrite(enB, 200);
 }
 
 void stop() {
