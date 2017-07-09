@@ -38,6 +38,18 @@ void forward() {
   analogWrite(enB, 200);
 }
 
+void reverse() {
+  //run 1st motor
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  //speed to 1st motor
+  analogWrite(enA, 200);
+  //run 2nd motor
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  //speed to 2nd motor
+  analogWrite(enB, 200);
+}
 void stop() {
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
