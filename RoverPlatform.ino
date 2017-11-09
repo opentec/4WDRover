@@ -16,53 +16,17 @@ void setup() {
 }
 
 void loop() {
+//Starting from a stop point
   l298n.stop();
-  //forward();
-  //delay(2000);
-  //l298n.stop();
-  //One second delay for motor to fully rest
-  //delay(1000);
-  //reverse();
-  //delay(2000);
-  //l298n.stop();
-  //One second delay for motor to fully rest
-  //delay(1000);
-  //leftTurn();
-  //delay(2000);
-  //l298n.stop();
-  //One second delay for motor to fully rest
-  //delay(1000);
-  //rightTurn();
-  //delay(2000);
-  //l298n.stop();
-  //One second delay for motor to fully rest
-  //delay(1000);
-}
-
-void forward(){
-  //run 1st motor
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
-  //speed to 1st motor
-  analogWrite(enA, 200);
-  //run 2nd motor
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
-  //speed to 2nd motor
-  analogWrite(enB, 200);
-}
-
-void reverse(){
-  //run 1st motor
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
-  //speed to 1st motor
-  analogWrite(enA, 200);
-  //run 2nd motor
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
-  //speed to 2nd motor
-  analogWrite(enB, 200);
+  l298n.forward(200);
+//Two second delay for motor to fully rest
+  delay(2000);
+  leftTurn();
+  l298n.forward(200):
+  delay(2000);
+  l298n.stop();
+  l298n.reverse(200);
+  delay(2000);
 }
 
 void leftTurn(){
