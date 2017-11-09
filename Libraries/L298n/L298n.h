@@ -11,6 +11,8 @@
 class L298n{
   public:
 	L298n(int enA, int enB, int in1, int in2, int in3, int in4);
+	void forward(int mtrSpd);
+	void reverse(int mtrSpd);
 	void stop();
   private:
     int _enA;
