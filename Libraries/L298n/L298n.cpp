@@ -20,19 +20,32 @@ L298n::L298n(int enA, int enB, int in1, int in2, int in3, int in4){
 	_in4 = in4;
 }
 
-/*
-void L298n::reverse(){
+void L298n::forward(int mtrSpd){
+	//run 1st motor
+	digitalWrite(_in1, HIGH);
+	digitalWrite(_in2, LOW);
+	//set speed of 1st motor
+	analogWrite(_enA, mtrSpd);
+	//run 2nd motor
+	digitalWrite(_in3, HIGH);
+	digitalWrite(_in4, LOW);
+	//set speed of 2nd motor
+	analogWrite(_enB, mtrSpd);
+}
+
+void L298n::reverse(int mtrSpd){
 	//run 1st motor
 	digitalWrite(_in1, LOW);
-	digitalWrite(_in1, HIGH);
-	//speed to 1st motor
-	analogWrite(_enA, 100);
+	digitalWrite(_in2, HIGH);
+	//set speed of 1st motor
+	analogWrite(_enA, mtrSpd);
+	//run 2nd motor
 	digitalWrite(_in3, LOW);
-	digitalWrite(_in1, HIGH);
-	//speed to 2nd motor
-	analogWrite(_enB, 100);
+	digitalWrite(_in4, HIGH);
+	//set speed of 2nd motor
+	analogWrite(_enB, mtrSpd);
 }
-*/
+
 
 void L298n::stop(){
 	digitalWrite(_in1, LOW);
