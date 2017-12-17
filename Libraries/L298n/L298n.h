@@ -12,6 +12,7 @@ class L298n{
   public:
 	L298n(int enA, int enB, int in1, int in2, int in3, int in4);
 	void forward(int mtrSpd);
+	void motorWrite(int mtrSpdL, int mtrSpdR);
 	void reverse(int mtrSpd);
 	void stop();
   private:
@@ -22,4 +23,5 @@ class L298n{
 	int _in3;
 	int _in4;
 };
-#endif;
+
+#endif
