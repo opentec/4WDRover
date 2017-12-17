@@ -33,6 +33,29 @@ void L298n::forward(int mtrSpd){
 	analogWrite(_enB, mtrSpd);
 }
 
+void L298n::motorWrite(int mtrSpdL, int mtrSpdR){
+	if(mtrSpdL>0){
+		digitalWrite(_in1, HIGH);
+		digitalWrite(_in2, LOW);
+		analogWrite(_enA, mtrSpdL);
+	}
+	else if(mtrSpdL<0){
+		digitalWrite(_in1, LOW);
+		digitalWrite(_in2, HIGH);
+		analogWrite(_enA, mtrSpdL);
+	}
+	if(mtrSpdR>0){
+		digitalWrite(_in3, HIGH);
+		digitalWrite(_in4, LOW);
+		analogWrite(_enB, mtrSpdR);
+	}
+	else if(mtrSpdR<0){
+		digitalWrite(_in3, LOW);
+		digitalWrite(_in4, HIGH);
+		analogWrite(_enB, mtrSpdR);
+	}
+}
+
 void L298n::reverse(int mtrSpd){
 	//run 1st motor
 	digitalWrite(_in1, LOW);
