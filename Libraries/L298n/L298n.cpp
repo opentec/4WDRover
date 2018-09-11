@@ -77,6 +77,31 @@ void L298n::reverse(int mtrSpd){
 	analogWrite(_enB, mtrSpd);
 }
 
+void L298n::spinLeft(int mtrSpd){
+	//run 1st motor
+	digitalWrite(_in1, LOW);
+	digitalWrite(_in2, HIGH);
+	//speed to 1st motor
+	analogWrite(_enA, mtrSpd);
+	//run 2nd motor
+	digitalWrite(_in3, HIGH);
+	digitalWrite(_in4, LOW);
+	//speed to 2nd motor
+	analogWrite(_enB, mtrSpd);
+}
+
+void L298n::spinRight(int mtrSpd){
+	//run 1st motor
+	digitalWrite(_in1, HIGH);
+	digitalWrite(_in2, LOW);
+	//speed to 1st motor
+	analogWrite(_enA, mtrSpd);
+	//run 2nd motor
+	digitalWrite(_in3, LOW);
+	digitalWrite(_in4, HIGH);
+	//speed to 2nd motor
+	analogWrite(_enB, mtrSpd);
+}
 
 void L298n::stop(){
 	digitalWrite(_in1, LOW);
