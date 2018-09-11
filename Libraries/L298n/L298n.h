@@ -14,6 +14,8 @@ class L298n{
 	void forward(int mtrSpd);
 	void motorWrite(int mtrSpdL, int mtrSpdR);
 	void reverse(int mtrSpd);
+	void spinLeft(int mtrSpd);
+    void spinRight(int mtrSpd);
 	void stop();
   private:
     int _enA;
