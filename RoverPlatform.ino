@@ -21,36 +21,11 @@ void loop() {
   l298n.forward(200);
 //Two second delay for motor to fully rest
   delay(2000);
-  leftTurn();
+  l298n.leftSpin(100);
+  delay(2000);
   l298n.forward(200):
   delay(2000);
   l298n.stop();
   l298n.reverse(200);
   delay(2000);
-}
-
-void leftTurn(){
-  //run 1st motor
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
-  //speed to 1st motor
-  analogWrite(enA, 200);
-  //run 2nd motor
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
-  //speed to 2nd motor
-  analogWrite(enB, 200);
-}
-
-void rightTurn(){
-  //run 1st motor
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
-  //speed to 1st motor
-  analogWrite(enA, 200);
-  //run 2nd motor
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
-  //speed to 2nd motor
-  analogWrite(enB, 200);
 }
